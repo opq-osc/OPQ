@@ -21,7 +21,7 @@ function Api_LuaCaller(CurrentQQ, funcName, data)
                 -- 欲发送消息的类型 "TextMsg","JsonMsg","XmlMsg","ReplayMsg" ,"TeXiaoTextMsg","PicMsg","VoiceMsg","PhoneMsg" 文本型
                 groupid = data.groupid, -- 发送私聊消息是 在此传入群ID 其他情况为0 整数型
                 content = data.content, -- 发送的文本内容
-                atUser = data.atUser, --   At用户 传入用户的QQ号 其他情况为0 整数类型 (不支持多人@)
+                --atUser = data.atUser, --  (废弃) At用户 传入用户的QQ号 其他情况为0 整数类型 (不支持多人@) 多人@发送请发送文本宏[ATUSER(QQ1,QQ2....)]  如[ATUSER(123456,654700,122223123)]
                 voiceUrl = data.voiceUrl, --发送语音的网络地址 文本型
                 voiceBase64Buf = data.voiceBase64Buf, --发本地送语音的buf 转 bas64 编码 文本型
                 picUrl = data.picUrl,
@@ -30,8 +30,9 @@ function Api_LuaCaller(CurrentQQ, funcName, data)
                 --发本地送图片的buf 转 bas64 编码 文本型
                 forwordBuf = data.forwordBuf, --用于转发的buf
                 forwordField = data.forwordField,
-                 --对应协议所转发的字段
-                fileMd5 = data.fileMd5, --通过md5 值发送 图片 文本型
+                --对应协议所转发的字段
+                --fileMd5 = data.fileMd5,(废弃) --通过md5 值发送 图片 文本型
+                picMd5s = data.picMd5s,--通过md5 值发送 图片 文本型数组
                 replayInfo = nil,
                 flashPic = data.flashPic --是否所发图片是否为发送闪照 true 闪照 false 普通发送
                 
