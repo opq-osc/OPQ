@@ -56,6 +56,9 @@ function Api_LuaCaller(CurrentQQ, funcName, data)
                 t
             )
         end,
+        ["SendMsgV2"] = function()
+            return Api.Api_SendMsgV2(CurrentQQ, data)
+        end,
         --QQ群功能包加群 拉人 踢群 退群
         ["GroupMgr"] = function()
             --[[
