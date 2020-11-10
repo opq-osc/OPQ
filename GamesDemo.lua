@@ -1410,7 +1410,7 @@ function Sign(CurrentWxid, data)
 end
 function GetConn()
     c = mysql.new()
-    ok, err = c:connect({host = MYSQL_IP, port = MYSQL_PORT, database = "OPQDB", user = "root", password = "fu4ku."})
+    ok, err = c:connect({host = MYSQL_IP, port = MYSQL_PORT, database = "OPQDB", user = "root", password = "123456."})
     if err ~= nil then
         log.error("mysql err %v", err)
         return 1
