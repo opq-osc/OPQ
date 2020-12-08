@@ -16,15 +16,15 @@ function GetUrl(data)
         return GetBJHUrl(data)
     end
 end
-
 function GetYZFUrl(data)
+    local userid = string.format("kfh53e531627f2ee4c_h552fdfc072182654f163f5f%d", os.time())
     response, error_message =
         http.request(
         "POST",
         string.format("https://yzf.qq.com/fsna/kf-file/upload_wx_media?_t=%d", os.time()),
         {
             multipart = {
-                ["userid"] = "kfh53e531627f2ee4c_h552fdfc072182654f163f5f0f9a621d72",
+                ["userid"] = userid,
                 ["agentid"] = "",
                 ["media_type"] = "image",
                 ["mid"] = "fsna"
