@@ -2,7 +2,7 @@ local http = require("http")
 local json = require("json")
 
 function GetUrl(data)
-    local index = GenRandInt(1, 4)
+    local index = GenRandInt(1, 3)
     if index == 1 then
         return GetYZFUrl(data)
     end
@@ -10,9 +10,6 @@ function GetUrl(data)
         return GetTTUrl(data)
     end
     if index == 3 then
-        return GetDPUrl(data)
-    end
-    if index == 4 then
         return GetBJHUrl(data)
     end
 end
@@ -62,30 +59,6 @@ function GetTTUrl(data)
     end
     return jsonData.web_url
 end
-
-function GetDPUrl(data)
-    response, error_message =
-        http.request(
-        "POST",
-        "https://kfupload.alibaba.com/mupload",
-        {
-            multipart = {
-                ["scene"] = "productImageRule",
-                ["name"] = "22222.jpg"
-            },
-            file = {
-                ["file"] = "22222.jpg",
-                ["body"] = data
-            }
-        }
-    )
-    jsonData = json.decode(response.body)
-    if jsonData.code ~= "0" then
-        return nil
-    end
-    return jsonData.url
-end
-
 function GetBJHUrl(data)
     response, error_message =
         http.request(
