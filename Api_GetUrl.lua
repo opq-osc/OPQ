@@ -1,15 +1,11 @@
 local http = require("http")
 local json = require("json")
-
 function GetUrl(data)
-    local index = GenRandInt(1, 3)
+    local index = GenRandInt(1, 2)
     if index == 1 then
         return GetYZFUrl(data)
-    end
+    end 
     if index == 2 then
-        return GetTTUrl(data)
-    end
-    if index == 3 then
         return GetBJHUrl(data)
     end
 end
@@ -38,26 +34,6 @@ function GetYZFUrl(data)
     end
 
     return UrlDecode(jsonData["KfPicUrl"])
-end
---ok
-function GetTTUrl(data)
-    response, error_message =
-        http.request(
-        "POST",
-        "https://mp.toutiao.com/upload_photo/?type=json",
-        {
-            multipart = {},
-            file = {
-                ["photo"] = "./22.jpg",
-                ["body"] = data
-            }
-        }
-    )
-    jsonData = json.decode(response.body)
-    if jsonData.message ~= "success" then
-        return nil
-    end
-    return jsonData.web_url
 end
 function GetBJHUrl(data)
     response, error_message =
