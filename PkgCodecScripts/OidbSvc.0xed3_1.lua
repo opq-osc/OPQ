@@ -12,14 +12,21 @@ function PackPkg(t, User)
     buf_40 = PkgCodec.newPbCodec()
     buf_40:EncodeVarint(1, 0)
     buf_40:EncodeVarint(t.UserID)
-    buf_40:EncodeVarint(2, 0)
-    buf_40:EncodeVarint(t.GroupID)
+    if t.Type == 1 then
+        buf_40:EncodeVarint(2, 0)
+        buf_40:EncodeVarint(t.GroupID)
+    end
     buf_40:EncodeVarint(3, 0)
     buf_40:EncodeVarint(417649)
     buf_40:EncodeVarint(4, 0)
     buf_40:EncodeVarint(0)
-    buf_40:EncodeVarint(5, 0)
-    buf_40:EncodeVarint(0)
+    if t.Type == 1 then
+        buf_40:EncodeVarint(5, 0)
+        buf_40:EncodeVarint(0)
+    else
+        buf_40:EncodeVarint(5, 0)
+        buf_40:EncodeVarint(t.UserID)
+    end
     data:EncodeVarint(4, 2)
     data:EncodeRawBytes(buf_40:GetPbData())
     PkgCodec.SendSSoData(
