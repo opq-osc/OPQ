@@ -1,8 +1,7 @@
 local http = require("http")
-local log = require("log")
 local json = require("json")
 function GetUrl(data)
-    local index = GenRandInt(2, 5)
+    local index = GenRandInt(2, 6)
     if index == 2 then
         return GetBJHUrl(data)
     end
@@ -15,8 +14,39 @@ function GetUrl(data)
     if index == 5 then
         return GetOPPOUrl(data)
     end
+
+    if index == 6 then
+        return GetYZFUrl(data)
+    end
 end
 
+function GetYZFUrl(data)
+    local userid = string.format("kfh53e531627f2ee4c_h58708d8145940cae8269e42%d", os.time())
+    local response, error_message =
+        http.request(
+        "POST",
+        string.format("https://yzf.qq.com/fsna/kf-file/upload_wx_media?_t=%d", os.time()),
+        {
+            multipart = {
+                ["userid"] = userid,
+                ["agentid"] = "",
+                ["media_type"] = "image",
+                ["mid"] = "fsna"
+            },
+            file = {
+                ["file"] = "22.jpg",
+                ["body"] = data
+            }
+        }
+    )
+    --log.info("%s ", response.body)
+    jsonData = json.decode(response.body)
+    if jsonData["code"] ~= 0 then
+        return nil
+    end
+
+    return UrlDecode(jsonData["KfPicUrl"])
+end
 function GetNiuUrl(data)
     local response, error_message = http.request("GET", string.format("http://gocloudcoder.com:8081/upload"))
 
