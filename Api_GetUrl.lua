@@ -1,7 +1,7 @@
 local http = require("http")
 local json = require("json")
 function GetUrl(data)
-    local index = GenRandInt(2, 6)
+    local index = GenRandInt(2, 5)
     if index == 2 then
         return GetBJHUrl(data)
     end
