@@ -14,10 +14,6 @@ function GetUrl(data)
     if index == 5 then
         return GetOPPOUrl(data)
     end
-
-    if index == 6 then
-        return GetYZFUrl(data)
-    end
 end
 
 function GetYZFUrl(data)
