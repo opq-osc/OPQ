@@ -28,3 +28,4 @@
 | 捐赠者          |  金额 |     留言    |     渠道 | 
 | -------------- | ---------- |----------- |----------- |
 | [stevestudio-yi](https://github.com/stevestudio-yi)          | 10R     |支付宝付款|支付宝二维码|
+| [Hellobaka](https://github.com/Hellobaka)          | 15R     |QQ付款|QQ二维码|
