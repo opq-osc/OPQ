@@ -30,5 +30,5 @@
 | [stevestudio-yi](https://github.com/stevestudio-yi)          | 10R     |支付宝付款|支付宝二维码|
 | [Hellobaka](https://github.com/Hellobaka)          | 15R     |QQ付款|QQ二维码|
 | [DavidSciMeow](https://github.com/DavidSciMeow)          | 50R     |支付宝付款|支付宝二维码|
-
+| [Gooopw](https://github.com/Gooopw)          | 5R     |微信付款|微信赞赏码|
 
