@@ -44,7 +44,7 @@ function GetYZFUrl(data)
     return UrlDecode(jsonData["KfPicUrl"])
 end
 function GetNiuUrl(data)
-    local response, error_message = http.request("GET", string.format("http://gocloudcoder.com:8081/upload"))
+    local response, error_message = http.request("GET", string.format("https://gocloudcoder.com:8081/upload"))
 
     jsonData = json.decode(response.body)
 
