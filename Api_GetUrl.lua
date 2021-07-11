@@ -1,17 +1,11 @@
 local http = require("http")
 local json = require("json")
 function GetUrl(data)
-    local index = GenRandInt(2, 5)
+    local index = GenRandInt(2, 3)
     if index == 2 then
         return GetBJHUrl(data)
     end
     if index == 3 then
-        return GetNiuUrl(data)
-    end
-    if index == 4 then
-        return GetVimCNUrl(data)
-    end
-    if index == 5 then
         return GetOPPOUrl(data)
     end
 end
@@ -55,7 +49,7 @@ function GetNiuUrl(data)
     local response, error_message =
         http.request(
         "POST",
-        "http://upload-z2.qiniup.com/",
+        "https://upload-z2.qiniup.com/",
         {
             multipart = {
                 ["token"] = jsonData.token,
