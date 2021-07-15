@@ -36,4 +36,4 @@
 |     小包子    | 5R     |支付宝付款|支付宝二维码|
 | [CodFrm](https://github.com/CodFrm)       | 100R     |支付宝付款|支付宝二维码|
 | [Dandanla](https://github.com/Dandanla)          | 20R     |微信付款|微信转账|
-
+| [newkld](https://github.com/newkld)          | 21R     |支付宝|红包|
