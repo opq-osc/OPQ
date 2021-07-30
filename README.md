@@ -38,3 +38,4 @@
 | [Dandanla](https://github.com/Dandanla)          | 20R     |微信付款|微信转账|
 | [newkld](https://github.com/newkld)          | 21R     |支付宝|红包|
 | [yangpixi](https://github.com/yangpixi)          | 20R     |QQ付款|QQ二维码|
+| [ByboyCn](https://github.com/ByboyCn)          | 200R     |QQ付款|QQ转账|
