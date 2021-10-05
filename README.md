@@ -40,4 +40,4 @@
 | [yangpixi](https://github.com/yangpixi)          | 20R     |QQ付款|QQ二维码|
 | [ByboyCn](https://github.com/ByboyCn)          | 200R     |QQ付款|QQ转账|
 | [aoguai](https://github.com/aoguai)          | 10R     |微信付款|微信赞赏码|
-
+| [xiyaowong](https://github.com/xiyaowong)          | 20R     |微信付款|微信赞赏码|
