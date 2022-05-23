@@ -1,0 +1,65 @@
+name: 问题反馈
+description: 报告一个错误，以帮助我们改善OPQBOT
+
+body:
+- type: markdown
+  attributes:
+    value: |
+      感谢您抽出宝贵的时间填写此错误报告！但是您必须确保在提出问题之前没有其他人提出您的问题！
+- type: textarea
+  id: bug-description
+  attributes:
+    label: 错误描述
+    description: 告诉我们您遇到了什么问题
+    placeholder: 包括有关您尝试的内容，预期发生的事情以及实际发生的事情的信息。越多的细节越好！
+  validations:
+    required: true
+- type: input
+  id: OPQBot-version
+  attributes:
+    label: OPQBot 版本
+    description: 您下载了哪个版本的OPQBOT？
+  validations:
+    required: true
+- type: input
+  id: system-architecture
+  attributes:
+    label: 系统架构
+    description: 您使用的架构，例如 `linux/amd64`, `windows/amd64`
+  validations:
+    required: true
+- type: textarea
+  id: log
+  attributes:
+    label: Logs
+    description: 在此处提供相关的错误日志（或者您可以使用屏幕截图来描述）
+    placeholder: 注意隐藏您的个人信息
+- type: textarea
+  id: steps-to-reproduce
+  attributes:
+    label: 重现步骤
+    description: 如何复现它？对于我们来说，找到错误很重要
+    value: |
+      1. 
+      2. 
+      3. 
+      ...
+- type: textarea
+  id: Others
+  attributes:
+    label: 其他
+    description: 您想如何解决此问题
+    placeholder: 建议的解决方案必须清晰，且可实现！
+- type: checkboxes
+  id: area
+  attributes:
+    label: 受影响区域
+    options:
+    - label: "文档"
+    - label: "安装"
+    - label: "性能和可扩展性"
+    - label: "安全"
+    - label: "用户体验"
+    - label: "开发人员基础架构"
+    - label: "扩展"
+    - label: "其他"
