@@ -14,4 +14,4 @@ if [[ "$port" != "" ]] ; then
     echo "已经将机器人地址设置为$port"
 fi
 echo "开始执行OPQBot"
-/apps/OPQBot
+exec /apps/OPQBot
