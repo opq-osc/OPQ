@@ -1,3 +1,6 @@
+## 交流群 https://t.me/IOTQQ
+
+
 ## 🎈 打赏通道 🎈
 
 🦀️🦀️ [OPQ Open Source Community](https://github.com/opq-osc)
