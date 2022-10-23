@@ -25,7 +25,6 @@
 
 🦀️🦀️ 所有软件使用行为请遵守法律法规
 
-<img src="https://camo.githubusercontent.com/39e00fdd4321a8da5d4fb737d0d15934c190c3e98f8217752768fd4e4fc59fd8/68747470733a2f2f692e6c6f6c692e6e65742f323032312f30362f30362f763871426c3567506e5341723163472e6a7067" alt="Drawing" width="180px" />      <img src="https://camo.githubusercontent.com/b7a527da0c5ff7141f580d458993b48cd6968497ab55316cf25765af23b4b364/68747470733a2f2f692e6c6f6c692e6e65742f323032312f30362f30362f735854384d3237794f346a455061782e6a7067" alt="Drawing" width="180px" />  
 
 
 | 捐赠者          |  金额 |     留言    |     渠道   | 
