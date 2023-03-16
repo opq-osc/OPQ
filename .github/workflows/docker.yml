@@ -38,7 +38,7 @@ jobs:
             version=${{ inputs.version }}
           push: true
           platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/386
-          tags: opqbot/opq:latest,${{ format('opqbot/opq:v{0}', inputs.version) }}
+          tags: opqofficial/opq:latest,${{ format('opqofficial/opq:v{0}', inputs.version) }}
       - name: Build and push
         if: success() && startsWith(github.ref, 'refs/tags/')
         id: docker_build_auto
@@ -49,4 +49,4 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/386
-          tags: opqbot/opq:latest,${{ format('opqbot/opq:v{0}', steps.get_version.outputs.version-without-v) }}
+          tags: opqofficial/opq:latest,${{ format('opqofficial/opq:v{0}', steps.get_version.outputs.version-without-v) }}
