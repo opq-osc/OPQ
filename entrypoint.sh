@@ -1,17 +1,31 @@
 #!/bin/sh
+
+run_args=()
+
 if [[ "$token" == "" ]] ; then
-    if [[ "$(awk -F= '$1 ~ /^Token.*$/ {gsub(/^\s*|\s*$|"/, "",$2);print $2}' CoreConf.conf)" != "" ]] ; then
-        echo "使用配置文件中的Token运行"
-    else
-        echo "你Token呢？认真读文档啊喂 文档链接: https://github.com/opq-osc/OPQ/wiki/%E9%80%9A%E8%BF%87-Docker-%E5%AE%89%E8%A3%85 "
-        exit 1
-    fi
+    echo "注意，你没有配置 Token"
 else
-    sed -i "s/Token\s*=.*/Token = \"${token}\"/g" CoreConf.conf
+    run_args+=("-token" "$token")
 fi
-if [[ "$port" != "" ]] ; then
-    sed -i "s/Port\s*=.*/Port = \"${port}\"/g" CoreConf.conf
-    echo "已经将机器人地址设置为$port"
+
+if [[ "$port" == "" ]] ; then
+    echo "将默认运行在 8086 ，注意安全组和防火墙情况，若仅内网使用，请关闭端口防止渗透"
+else
+    echo "将运行在 $port 端口"
+    run_args+=("-port" "$port")
 fi
-echo "开始执行OPQBot"
-exec /apps/OPQBot
+
+if [[ "$wsserver" != "" ]] ; then
+    echo "ws server: $wsserver"
+    run_args+=("-wsserver" "$wsserver")
+fi
+
+if [[ "$wthread" != "" ]] ; then
+    echo "ws thread: $wthread"
+    run_args+=("-wthread" "$wthread")
+fi
+
+echo "开始运行 OPQBot"
+
+echo "运行参数: ${run_args[@]}"
+exec ./opqbot/OPQBot "${run_args[@]}"
