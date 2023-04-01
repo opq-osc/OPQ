@@ -28,4 +28,4 @@ fi
 echo "开始运行 OPQBot"
 
 echo "运行参数: $run_args"
-exec ./opqbot/OPQBot $run_args
+exec /apps/OPQBot $run_args
